@@ -7,7 +7,7 @@
     "build": "$(yarn bin)/vue-cli-service build",
     "lint": "$(yarn bin)/vue-cli-service lint",
     "start": "node server.js",
-    "heroku-postbuild": "yarn build"
+    "heroku-postbuild": "yarn install --production=false && yarn build"
   },
   "dependencies": {
     "express": "^4.16.2",
