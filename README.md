@@ -19,4 +19,5 @@ vue create versioned-ui
 
 ## Resources
 
+* [vue-cli Documentation](https://github.com/vuejs/vue-cli/blob/dev/docs/README.md)
 * [Heroku Deployment](https://wyeworks.com/blog/2018/1/8/how-to-quickly-deploy-a-vuejs-app-to-heroku)

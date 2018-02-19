@@ -10,8 +10,11 @@
     "heroku-postbuild": "yarn install --production=false && yarn build"
   },
   "dependencies": {
-    "express": "^4.16.2",
-    "vue": "^2.5.13"
+    "vue": "2.5.13",
+    "vue-router": "3.0.1",
+    "vuex": "3.0.1",
+    "express": "4.16.2",
+    "axios": "0.17.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.0.0-beta.1",
