@@ -9,7 +9,7 @@
           <span class="icon-bar"></span>
         </button>
         <router-link to="/" class="navbar-brand">
-          Vue.js Admin
+          Home
         </router-link>
       </div>
       <div id="navbar" class="navbar-collapse collapse">
