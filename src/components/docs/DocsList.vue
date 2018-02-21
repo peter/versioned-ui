@@ -128,7 +128,7 @@ export default {
     editUrl(doc) {
       return `/docs/${this.contentType}/${doc.id}/edit`
     },
-    createUrl(contentType) {
+    createUrl() {
       return `/docs/${this.contentType}/new`
     },
     canCreate() {

@@ -66,7 +66,7 @@ export default {
     remove() {
       if (confirm('Är du säker?')) {
         this.api.remove(this.doc)
-          .then(doc => {
+          .then(() => {
             router.push(`/docs/${this.contentType}`)
           })
       }

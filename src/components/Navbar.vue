@@ -14,9 +14,9 @@
       </div>
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
-          <!-- <li>
-            <router-link to="/articles">Articles</router-link>
-          </li> -->
+          <li>
+            <router-link to="/docs">Browse</router-link>
+          </li>
           <li class="logged-in-user">
             <a href="#" data-toggle="tooltip" title="Logga ut" @click="logout">
               {{userEmail()}}
