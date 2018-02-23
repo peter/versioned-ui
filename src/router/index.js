@@ -6,6 +6,7 @@ import Login from '@/components/Login'
 import DocsList from '@/components/docs/DocsList'
 import DocsEdit from '@/components/docs/DocsEdit'
 import DocsNew from '@/components/docs/DocsNew'
+import SearchPage from '@/components/SearchPage'
 
 Vue.use(Router)
 
@@ -15,6 +16,11 @@ const router = new Router({
       path: '/',
       name: 'HelloWorld',
       component: Home
+    },
+    {
+      path: '/search',
+      name: 'Search',
+      component: SearchPage
     },
     {
       path: '/login',

@@ -21,3 +21,5 @@ vue create versioned-ui
 
 * [vue-cli Documentation](https://github.com/vuejs/vue-cli/blob/dev/docs/README.md)
 * [Heroku Deployment](https://wyeworks.com/blog/2018/1/8/how-to-quickly-deploy-a-vuejs-app-to-heroku)
+* [Algolia Search JavaScript Client](https://www.algolia.com/doc/api-client/javascript/getting-started)
+* [Top 5 Vue Admin Templates](https://ourcodeworld.com/articles/read/699/top-5-best-free-vue-js-admin-templates)
