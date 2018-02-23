@@ -6,7 +6,9 @@
       <table class="table table-striped">
         <thead>
           <tr>
-            <th>Document</th>
+            <th>ID</th>
+            <th>Type</th>
+            <th>Title</th>
             <th>Action</th>
             <th>User</th>
             <th>Time</th>
@@ -15,16 +17,18 @@
         <tbody>
           <tr v-for="item in changelog" v-bind:key="item.id">
             <td>
-              <span v-if="item.action == 'delete'">
-                {{ objectName(item) }}
-              </span>
-              <router-link v-else :to="editUrl(item)">
-                {{ objectName(item) }}
+              <router-link v-if="item.action !== 'delete'" :to="editUrl(item)">
+                {{item.id}}
               </router-link>
+              <span v-else>{{item.id}}</span>
             </td>
-            <td>{{ item.action }}</td>
-            <td>{{ item.created_by }}</td>
-            <td>{{ item.created_at | date('YYYY-MM-DD hh:mm') }}</td>
+            <td>
+              {{item.doc.type}}
+            </td>
+            <td>{{item.doc.title}}</td>
+            <td>{{item.action}}</td>
+            <td>{{item.created_by}}</td>
+            <td>{{item.created_at | date('YYYY-MM-DD hh:mm') }}</td>
           </tr>
         </tbody>
       </table>

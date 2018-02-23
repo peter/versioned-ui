@@ -22,6 +22,10 @@ function notEmpty(value) {
   return !empty(value)
 }
 
+function envValue(key) {
+  return process.env[key]
+}
+
 function clone(obj) {
   if (obj == null || typeof obj !== 'object') return obj
   var copy = obj.constructor()
@@ -125,6 +129,7 @@ export default {
   notNil,
   empty,
   notEmpty,
+  envValue,
   filter,
   compact,
   getIn,
