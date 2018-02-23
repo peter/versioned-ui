@@ -38,7 +38,6 @@ export default {
     },
     writeAttributes: function() {
       if (this.doc && this.schema) {
-        console.log('pm debug writeAttributes', Swagger.writeAttributes(this.schema, this.doc))
         return Swagger.writeAttributes(this.schema, this.doc)
       } else {
         return null

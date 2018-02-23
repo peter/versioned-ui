@@ -41,11 +41,8 @@ export default {
   },
   mounted() {
     this.$refs.query.focus();
-    console.log('watching query', this.query)
     this.$watch('query', () => {
-      console.log('pm debug computing results with query', this.query)
       Search.search(this.query).then((data) => {
-       console.log('pm debug search results', data)
         this.results = data.hits
       })
     })
