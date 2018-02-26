@@ -4,7 +4,7 @@
 
 ```
 yarn install
-VUE_APP_API_URL=http://localhost:5000 yarn serve
+VUE_APP_API_URL=http://localhost:5000/v1 yarn serve
 open http://localhost:8080
 ```
 
