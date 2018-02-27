@@ -39,7 +39,7 @@ export default {
         .then(doc => {
           this.doc = doc
           Alert.setNext('success', 'Sparad')
-          router.push(`/${this.contentType}/${doc.id}/edit`)
+          router.push(`/docs/${this.contentType}/${doc.id}/edit`)
         })
         .catch(result => {
           Alert.set('errors', {title: 'Kunde inte spara', errors: result.errors})

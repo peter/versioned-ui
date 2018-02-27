@@ -41,18 +41,24 @@ export default {
     DocsForm
   },
   created() {
-    Swagger.get().then(swagger => {
-      this.id = this.$route.params.id
-      this.contentType = this.$route.params.contentType
-      this.swagger = swagger
-      this.schema = Swagger.schemas(swagger)[this.contentType]
-      this.api = Api.create(this.contentType)
-      this.api.get(this.id).then(doc => {
-        this.doc = doc
-      })
-    })
+    this.getDoc()
+  },
+  watch: {
+    '$route': 'getDoc'
   },
   methods: {
+    getDoc() {
+      Swagger.get().then(swagger => {
+        this.id = this.$route.params.id
+        this.contentType = this.$route.params.contentType
+        this.swagger = swagger
+        this.schema = Swagger.schemas(swagger)[this.contentType]
+        this.api = Api.create(this.contentType)
+        this.api.get(this.id).then(doc => {
+          this.doc = doc
+        })
+      })
+    },
     save(doc) {
       this.api.update(doc)
         .then(doc => {
