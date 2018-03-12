@@ -1,9 +1,13 @@
 <template>
-  <div id="app" class="container-fluid">
+  <div id="app">
     <navbar></navbar>
     <alerts></alerts>
-    <router-view></router-view>
-    <alerts></alerts>
+    <main role="main">
+      <div class="container">
+        <router-view></router-view>
+        <alerts></alerts>
+      </div>
+    </main>
   </div>
 </template>
 

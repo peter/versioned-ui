@@ -1,8 +1,6 @@
 <template>
-  <div>
-    <h1>History</h1>
-
     <div class="row">
+      <h1>History</h1>
       <table class="table table-striped">
         <thead>
           <tr>
@@ -33,7 +31,6 @@
         </tbody>
       </table>
     </div>
-  </div>
 </template>
 
 <script>
