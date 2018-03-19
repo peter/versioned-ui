@@ -74,7 +74,7 @@ function formattedValue(property, value) {
 
 function docsWithAttributeValues(docs, schema) {
   const attributeKeys = Swagger.attributes(schema).map(u.property('key'))
-  return docs.map(doc => {
+  return docs && docs.map(doc => {
     const attributeValues = attributeKeys.map(key => formattedValue(schema.properties[key], doc[key]))
     return u.merge(doc, {
       attributeValues

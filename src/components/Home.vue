@@ -52,6 +52,9 @@ export default {
         .then(changelog => {
           this.changelog = changelog
         })
+        .catch(err => {
+          console.log('Changelog.list error', err)
+        })
     },
     objectName(item) {
       return `${item.doc.type}:${item.doc.id}`

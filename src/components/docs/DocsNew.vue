@@ -38,11 +38,11 @@ export default {
       this.api.create(doc)
         .then(doc => {
           this.doc = doc
-          Alert.setNext('success', 'Sparad')
+          Alert.setNext('success', 'Saved')
           router.push(`/docs/${this.contentType}/${doc.id}/edit`)
         })
         .catch(result => {
-          Alert.set('errors', {title: 'Kunde inte spara', errors: result.errors})
+          Alert.set('errors', {title: 'Could not save', errors: result.errors})
         })
     }
   }

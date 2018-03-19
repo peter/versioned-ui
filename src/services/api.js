@@ -1,11 +1,12 @@
 import axios from 'axios'
 import User from '@/services/user'
 import u from '@/util'
+import router from '@/router'
 
 function create(contentType) {
   const listUrl = process.env.VUE_APP_API_URL + '/' + contentType
   function getUrl(id) {
-    return listUrl + '/' + id
+    return listUrl + '/' + id + '?relationships=1'
   }
   function wrap(item) {
     return {data: {attributes: item}}
@@ -14,7 +15,8 @@ function create(contentType) {
     return u.getIn(response, 'data', 'data', 'attributes')
   }
   function responseList(response) {
-    return u.getIn(response, 'data', 'data').map(u.property('attributes'))
+    const data = u.getIn(response, 'data', 'data')
+    return data && data.map(u.property('attributes'))
   }
   function errorMessages(error) {
     return u.getIn(error, 'response', 'data', 'errors').map(u.property('message'))
@@ -60,6 +62,15 @@ function create(contentType) {
     remove
   }
 }
+
+// Redirect auth failures to login page
+// https://gist.github.com/yajra/5f5551649b20c8f668aec48549ef5c1f
+axios.interceptors.response.use(function (response) {
+    return response
+}, function (error) {
+    if (error.response.status === 401) router.push('/login')
+    return Promise.reject(error)
+})
 
 export default {
   create

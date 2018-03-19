@@ -1,7 +1,7 @@
 <template lang="html">
   <section class="content-item-page">
     <div class="page-title">
-        <h1>Ändra {{contentType}} {{id}}</h1>
+        <h1>Edit {{contentType}} {{id}}</h1>
     </div>
     <docs-form :doc="doc" :schema="schema" @formSubmit="save($event)"></docs-form>
     <div v-if="canDelete">
@@ -63,14 +63,14 @@ export default {
       this.api.update(doc)
         .then(doc => {
           if (doc) this.doc = doc
-          Alert.set('success', 'Sparad')
+          Alert.set('success', 'Saved')
         })
         .catch(result => {
-          Alert.set('errors', {title: 'Kunde inte spara', errors: result.errors})
+          Alert.set('errors', {title: 'Could not save', errors: result.errors})
         })
     },
     remove() {
-      if (confirm('Är du säker?')) {
+      if (confirm('Are you sure?')) {
         this.api.remove(this.doc)
           .then(() => {
             router.push(`/docs/${this.contentType}`)
